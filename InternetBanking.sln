@@ -3,7 +3,57 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBanking.Core", "InternetBanking.Core\InternetBanking.Core.csproj", "{E6DDB762-56EA-46E4-B0B2-29D7E5D12D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBanking.Web", "InternetBanking.Web\InternetBanking.Web.csproj", "{4A81162C-5DA0-46D6-BD22-E8C2C8384B37}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TestDesign", "TestDesign\", "{4DD8F2DB-BDB0-4105-8FFA-B88D0BEE3A3C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_20632"
+		Debug.AspNetCompiler.PhysicalPath = "TestDesign\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20632\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_20632"
+		Release.AspNetCompiler.PhysicalPath = "TestDesign\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20632\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "20632"
+		SlnRelativePath = "TestDesign\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBanking.Data", "InternetBanking.Data\InternetBanking.Data.csproj", "{E7B56FF2-8726-4195-8F63-BC939F4828B1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6DDB762-56EA-46E4-B0B2-29D7E5D12D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DDB762-56EA-46E4-B0B2-29D7E5D12D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DDB762-56EA-46E4-B0B2-29D7E5D12D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DDB762-56EA-46E4-B0B2-29D7E5D12D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A81162C-5DA0-46D6-BD22-E8C2C8384B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A81162C-5DA0-46D6-BD22-E8C2C8384B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A81162C-5DA0-46D6-BD22-E8C2C8384B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A81162C-5DA0-46D6-BD22-E8C2C8384B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD8F2DB-BDB0-4105-8FFA-B88D0BEE3A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD8F2DB-BDB0-4105-8FFA-B88D0BEE3A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD8F2DB-BDB0-4105-8FFA-B88D0BEE3A3C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD8F2DB-BDB0-4105-8FFA-B88D0BEE3A3C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E7B56FF2-8726-4195-8F63-BC939F4828B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B56FF2-8726-4195-8F63-BC939F4828B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B56FF2-8726-4195-8F63-BC939F4828B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B56FF2-8726-4195-8F63-BC939F4828B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
