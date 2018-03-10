@@ -30,15 +30,15 @@ namespace InternetBanking.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserDbContext>(options =>
-                options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));
+	        services.AddDbContext<UserDbContext>(options =>
+		   options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));  // Failed
 
-			services.AddDbContext<TransactionDbContext>(options =>
-			   options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));
+		services.AddDbContext<TransactionDbContext>(options =>
+		   options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));  // Failed
 
-			services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<UserDbContext>()
-                .AddDefaultTokenProviders();
+		services.AddIdentity<User, IdentityRole>()
+		.AddEntityFrameworkStores<UserDbContext>()
+		.AddDefaultTokenProviders();
 
             // Add application services.
             services.AddSingleton<IEmailSender, EmailSender>();
