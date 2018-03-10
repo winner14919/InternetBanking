@@ -5,10 +5,17 @@
     <UserSecretsId>aspnet-InternetBanking.Web-D5D743BD-7DD4-4B05-9B2F-CAA4A210AE08</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\InternetBankingWeb20180310012549 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\InternetBankingWeb20180310123300 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\InternetBankingWeb20180310124939 - Web Deploy.pubxml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.AzureAppServices.HostingStartup" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
   </ItemGroup>
@@ -20,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\css\Transaction\" />
     <Folder Include="wwwroot\images\Transaction\" />
     <Folder Include="wwwroot\js\Transaction\" />

@@ -14,15 +14,16 @@
       "launchUrl": "https://localhost:44352/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "InternetBanking.Web": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+
       },
-      "applicationUrl": "http://localhost:20335/"
+      "InternetBanking.Web": {
+        "commandName": "Project",
+        "launchBrowser": true,
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "applicationUrl": "http://localhost:20335/"
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ namespace InternetBanking.Web.Extensions
 {
 	public static class CreateRole
 	{
-		public static async Task Create(IServiceProvider serviceProvider, IConfiguration configuration)
+		public static void Create(IServiceProvider serviceProvider, IConfiguration configuration)
 		{
 			//adding custom roles
 			var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -21,10 +21,10 @@ namespace InternetBanking.Web.Extensions
             foreach (var roleName in roleNames)
 			{
 				//creating the roles and seeding them to the database
-				var roleExist = await RoleManager.RoleExistsAsync(roleName);
+				var roleExist =  RoleManager.RoleExistsAsync(roleName).Result;
 				if (!roleExist)
 				{
-					roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+					roleResult = RoleManager.CreateAsync(new IdentityRole(roleName)).Result;
 				}
 			}
             //creating a super user who could maintain the web app
@@ -34,14 +34,14 @@ namespace InternetBanking.Web.Extensions
 				Email = configuration.GetSection("UserSettings")["UserEmail"]
 			};
             string UserPassword = configuration.GetSection("UserSettings")["UserPassword"];
-			var _user = await UserManager.FindByEmailAsync(configuration.GetSection("UserSettings")["UserEmail"]);
+			var _user = UserManager.FindByEmailAsync(configuration.GetSection("UserSettings")["UserEmail"]).Result;
             if (_user == null)
 			{
-				var createPowerUser = await UserManager.CreateAsync(poweruser, UserPassword);
+				var createPowerUser = UserManager.CreateAsync(poweruser, UserPassword).Result;
 				if (createPowerUser.Succeeded)
 				{
 					//here we tie the new user to the "Admin" role 
-					await UserManager.AddToRoleAsync(poweruser, "Admin");
+					var role =  UserManager.AddToRoleAsync(poweruser, "Admin").Result;
                     }
 			}
 		}

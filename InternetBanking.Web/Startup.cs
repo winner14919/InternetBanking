@@ -31,10 +31,10 @@ namespace InternetBanking.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<UserDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Singleton);
+                options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));
 
 			services.AddDbContext<TransactionDbContext>(options =>
-			   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Singleton);
+			   options.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));
 
 			services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<UserDbContext>()
@@ -91,7 +91,7 @@ namespace InternetBanking.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-			CreateRole.Create(serviceProvider, configuration).Wait();
+			CreateRole.Create(serviceProvider, configuration);
 
 		}
     }
