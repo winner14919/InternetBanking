@@ -1,0 +1,59 @@
+﻿@using InternetBanking.Web.Models.TransactionViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-5">
+        <h3>Viet Han</h3>
+        @using (Html.BeginForm())
+    {
+        <h4>Toi Co</h4>
+        <select name="sender" style="color:blue">
+            <option value="VietinBank">VietinBank</option>
+            <option value="AgriBank">AgriBank</option>
+            <option value="VietComBank">VietComBank</option>
+            <option value="NagaBankHanQuoc">NagaBankHanQuoc</option>
+        </select>
+        <br/><br/>
+            <h4>Toi nhan</h4>
+        <select name="receiver" style="color:blue">
+            <option value="VietinBank">VietinBank</option>
+            <option value="AgriBank">AgriBank</option>
+            <option value="VietComBank">VietComBank</option>
+            <option value="NagaBankHanQuoc">NagaBankHanQuoc</option>
+        </select>
+
+        <input type="submit" value="TiepTuc">
+}
+    </div>
+
+    <h3>Viet Nhat</h3>
+    <div class="col-lg-5">
+        @using (Html.BeginForm())
+        {
+            <h4>Toi Co</h4>
+            <select name="sender" style="color:blue">
+                <option value="VietinBank">VietinBank</option>
+                <option value="AgriBank">AgriBank</option>
+                <option value="VietComBank">VietComBank</option>
+                <option value="YuChoNhatBan">YuChoNhatBan</option>
+            </select>
+            <br/>
+            <br />
+
+            <h4>Toi nhan</h4>
+            <select name="receiver" style="color:blue">
+                <option value="VietinBank">VietinBank</option>
+                <option value="AgriBank">AgriBank</option>
+                <option value="VietComBank">VietComBank</option>
+                <option value="YuChoNhatBan">YuChoNhatBan</option>
+            </select>
+
+            <input type="submit" value="TiepTuc">
+        }
+    </div>
+
+</div>
+

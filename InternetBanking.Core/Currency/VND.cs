@@ -11,6 +11,11 @@ namespace InternetBanking.Core.Currency
 			this.Value = value;
 		}
 		public string Name => "VND";
-		public decimal Value { get; }
+		public decimal Value { get; set; }
+
+		public VND ChangeToVND(ActionTransfer action)
+		{
+			return this;
+		}
 	}
 }

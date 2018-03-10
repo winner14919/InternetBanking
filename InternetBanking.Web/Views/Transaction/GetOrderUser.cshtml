@@ -1,0 +1,76 @@
+﻿@model IEnumerable<InternetBanking.Core.Order.TransactionOrder>
+
+@{
+    ViewData["Title"] = "GetOrderUser";
+}
+
+<h2>GetOrderUser</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @if (User.IsInRole("Admin"))
+    {
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+
+}
+            <th>
+                @Html.DisplayNameFor(model => model.SenderAccountId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverAccoutId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Action)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderAccountId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverAccoutId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Action)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

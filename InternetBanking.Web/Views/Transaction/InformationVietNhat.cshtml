@@ -1,0 +1,94 @@
+﻿@model InternetBanking.Web.Models.TransactionViewModel.VietNhatForm
+
+@{
+    ViewData["Title"] = "InformationVietNhat";
+}
+
+<h2>InformationVietNhat</h2>
+
+<h4>VietNhatForm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="InformationVietHan">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="MoneyValue" class="control-label">Số tiền JPY muốn gửi: </label>
+                <input asp-for="MoneyValue" class="form-control" />
+                <span asp-validation-for="MoneyValue" class="text-danger"></span>
+            </div>
+            @if ((string)ViewData["action"] == "Buy")
+            {
+                <div class="form-group" hidden>
+                    <label class="control-label">Số tiền VND sẽ gửi</label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+
+            }
+            else
+            {
+                <div class="form-group" hidden>
+                    <label class="control-label">Số tiền VND sẽ nhận</label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+            }
+
+
+            <div class="form-group" hidden>
+                <label asp-for="senderbank" class="control-label"></label>
+                <input asp-for="senderbank" class="form-control" value="@ViewData["sender"]" />
+                <span asp-validation-for="senderbank" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="receiverbank" class="control-label"></label>
+                <input asp-for="receiverbank" class="form-control" value="@ViewData["receiver"]" />
+                <span asp-validation-for="receiverbank" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="action" class="control-label"></label>
+                <input asp-for="action" class="form-control" value="@ViewData["ActionTransfer"]" />
+                <span asp-validation-for="action" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAccoutId" class="control-label">Số tài khoản gửi: @ViewData["sender"]</label>
+                <input asp-for="SenderAccoutId" class="form-control" />
+                <span asp-validation-for="SenderAccoutId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAccountName" class="control-label">Tên tài khoản gửi: @ViewData["sender"]</label>
+                <input asp-for="SenderAccountName" class="form-control" />
+                <span asp-validation-for="SenderAccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverAccoutId" class="control-label">Số tài khoản nhận: @ViewData["receiver"]</label>
+                <input asp-for="ReceiverAccoutId" class="form-control" />
+                <span asp-validation-for="ReceiverAccoutId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverAccountName" class="control-label">Tên tài khoản nhận: @ViewData["receiver"]</label>
+                <input asp-for="ReceiverAccountName" class="form-control" />
+                <span asp-validation-for="ReceiverAccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label">Số điện thoại</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tiếp tục" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

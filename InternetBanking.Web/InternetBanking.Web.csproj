@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureAppServices.HostingStartup" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" PrivateAssets="All" />
   </ItemGroup>
@@ -19,7 +20,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\css\Transaction\" />
+    <Folder Include="wwwroot\images\Transaction\" />
+    <Folder Include="wwwroot\js\Transaction\" />
+    <Folder Include="wwwroot\font\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InternetBanking.Core\InternetBanking.Core.csproj" />
+    <ProjectReference Include="..\InternetBanking.Data\InternetBanking.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,5 +8,5 @@ namespace InternetBanking.Core.Currency
     {
 		string Name { get; }
 		decimal Value { get;}
-    }
+	}
 }

@@ -1,0 +1,52 @@
+﻿@using InternetBanking.Core.Order
+@model IEnumerable<TransactionOrder>
+
+@{
+    ViewData["Title"] = "GetListOrder";
+}
+
+<h2>GetListOrder</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.ActionLink("Get all orders for this user", "GetOrderUser", "Transaction", new { id = item.UserId }) |
+        </td>
+    </tr>
+    }
+
+</table>
+
+
