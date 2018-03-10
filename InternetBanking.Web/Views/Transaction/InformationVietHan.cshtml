@@ -16,7 +16,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="MoneyValue" class="control-label">Số tiền KRM muốn gửi: </label>
+                <label asp-for="MoneyValue" class="control-label">Số tiền KRM muốn gửi: (>=10000KRM)</label>
                 <input asp-for="MoneyValue" class="form-control" />
                 <span asp-validation-for="MoneyValue" class="text-danger"></span>
             </div>

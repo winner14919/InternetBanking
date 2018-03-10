@@ -29,6 +29,7 @@ namespace InternetBanking.Web.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public IActionResult Index()
 		{
 			return View();
