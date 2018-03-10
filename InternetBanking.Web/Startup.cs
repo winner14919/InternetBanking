@@ -55,14 +55,6 @@ namespace InternetBanking.Web
 			Resource.Init();
 			SetDefault.Set();
 
-			//var config = new AutoMapper.MapperConfiguration(cfg =>
-			//{
-			//	cfg.AddProfile(new AutoMapperProfileConfiguration());
-			//});
-
-			//var mapper = config.CreateMapper();
-			//services.AddSingleton(mapper);
-			//services.AddMvc();
 
 		}
 
